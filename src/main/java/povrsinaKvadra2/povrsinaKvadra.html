@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PovrsinaKvadra</title>
+    <link href ="index.css" rel="stylesheet">
+    <script>
+          function izracunajPovrsinuKvadra(a, b, c) {
+            const povrsina = 2 * (a * b + b * c + a * c);
+            return povrsina;
+        }
+        function prikaziPovrsinu() {
+            const a = parseFloat(document.getElementById("a").value);
+            const b = parseFloat(document.getElementById("b").value);
+            const c = parseFloat(document.getElementById("c").value);
+
+             if (a > 0 && b > 0 && c > 0) {
+                const rezultat = izracunajPovrsinuKvadra(a, b, c);
+                document.getElementById("rezultat").textContent = `Površina kvadra je ${rezultat} kvadratnih jedinica.`;
+            } else {
+                document.getElementById("rezultat").textContent = "Molimo vas da unesete pozitivne brojeve za sve stranice kvadra.";
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>Izračunavanje površine kvadra</h1>
+<label for="a">Dužina stranice a:</label>
+<input type="number" id="a">
+<br>
+<label for="b">Dužina stranice b:</label>
+<input type="number" id="b"> ;
+<br>
+<label for="c">Dužina stranice c:</label>
+<input type="number" id="c"> ;
+<br>
+<button onclick="prikaziPovrsinu()">Izračunaj površinu</button>
+<p id="rezultat"></p>
+
+</body>
+</html>
